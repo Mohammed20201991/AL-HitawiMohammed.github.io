@@ -86,7 +86,7 @@ modalBtns.forEach((modalBtn,i)=>{
     })
 })
 /*==================== PORTFOLIO SWIPER  ====================*/
-let swiper = new Swiper(".portfolio_container", {
+let swiperPortfolio = new Swiper(".portfolio_container", {
     cssMode: true,
     loop:true,
     navigation: {
@@ -101,8 +101,28 @@ let swiper = new Swiper(".portfolio_container", {
     // keyboard: true,
   });
 /*==================== TESTIMONIAL ====================*/
+let swiperTestimonial = new Swiper(".testimonial_container", {
+    loop:true,
+    grabCurser: true,
+    spaceBetween: 48,
 
-
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      dynamicBullets: true,
+    },
+    breakpoints:{
+        568:{
+            slidesPerView:2,
+        }
+    }
+    // mousewheel: true,
+    // keyboard: true,
+  });
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 
 
