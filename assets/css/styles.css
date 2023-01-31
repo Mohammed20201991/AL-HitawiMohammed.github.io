@@ -157,7 +157,6 @@ img {
 }
 
 /*==================== NAV ====================*/
-
 .nav{
   max-width: 968px;
   height: var(--header-height);
@@ -194,7 +193,10 @@ img {
   box-shadow: 0 -1px 4px rgb(196, 218, 203);
   border-radius: 1.5rem 1.5rem 0 0;
   transition: .3s;
-  
+  -webkit-border-radius: 1.5rem 1.5rem 0 0;
+  -moz-border-radius: 1.5rem 1.5rem 0 0;
+  -ms-border-radius: 1.5rem 1.5rem 0 0;
+  -o-border-radius: 1.5rem 1.5rem 0 0;
 }}
 
 .nav_list{
@@ -234,15 +236,17 @@ img {
 
 
 /* show menu */
-
 .show_menu{
   bottom: 0;
 }
 /* Active link */
-
-
+.active-link{
+color: var(--first-color);
+}
 /* Change background header */
-
+.scroll-header{
+  box-shadow: 0 -1px 4px rgba(0,0, 0, 0.15);
+}
 
 /*==================== HOME ====================*/
 .home_container{
@@ -954,7 +958,26 @@ margin-bottom: var(--mb-2);
   color: #FFF;
 }
 /*========== SCROLL UP ==========*/
+.scrollup {
+  position: fixed;
+  right: 2.5rem;
+  bottom: -20%;
+  background-color: var(--first-color);
+  opacity: .8;
+  padding: .3rem .5rem;
+  border-radius: .4rem;
+  z-index: var(--z-tooltip);
+  transition: .4s;
+}
 
+.scrollup-icon {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.scrollup:hover {
+  background-color: var(--first-color-alt);
+}
 
 /* Show scroll */
 
