@@ -1,5 +1,4 @@
 /*==================== MENU SHOW Y HIDDEN ====================*/
-
 const navMenu = document.getElementById('nav_menu'),
       navToggle = document.getElementById('nav-toggle'),
       navClose = document.getElementById('nav-close')
@@ -11,6 +10,7 @@ if(navToggle){
     })
 }
 
+
 /*===== MENU HIDDEN =====*/
 /* Validate if constant exists */
 if(navClose){
@@ -18,6 +18,8 @@ if(navClose){
         navMenu.classList.remove('show_menu')
     })
 }
+
+
 
 /*==================== REMOVE MENU MOBILE ====================*/
 const navLink = document.querySelectorAll('.nav_link')
@@ -28,6 +30,7 @@ function linkAction(){
 //     // show_menu
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
+
 
 /*==================== ACCORDION SKILLS ====================*/
 const skillsContent= document.getElementsByClassName('skills_content')
@@ -46,6 +49,8 @@ function toggleSkills(){
 skillsHeader.forEach((el) => {
     el.addEventListener('click',toggleSkills)
 })
+
+
 /*==================== QUALIFICATION TABS ====================*/
 const tabs= document.querySelectorAll('[data-target]')
       tabContents = document.querySelectorAll('[data-content]')
@@ -62,6 +67,7 @@ tabs.forEach(tab =>{
     })
     tab.classList.add('qualification_active')
 })
+
 
 /*==================== SERVICES MODAL ====================*/
 const modalViews = document.querySelectorAll('.services_modal')
@@ -85,6 +91,8 @@ modalBtns.forEach((modalBtn,i)=>{
         })
     })
 })
+
+
 /*==================== PORTFOLIO SWIPER  ====================*/
 let swiperPortfolio = new Swiper(".portfolio_container", {
     cssMode: true,
@@ -100,6 +108,8 @@ let swiperPortfolio = new Swiper(".portfolio_container", {
     // mousewheel: true,
     // keyboard: true,
   });
+
+
 /*==================== TESTIMONIAL ====================*/
 let swiperTestimonial = new Swiper(".testimonial_container", {
     loop:true,
@@ -123,8 +133,9 @@ let swiperTestimonial = new Swiper(".testimonial_container", {
     // mousewheel: true,
     // keyboard: true,
   });
-/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 
+
+/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]')
 function scrollActive(){
     const scrollY = window.pageYOffset
@@ -141,6 +152,8 @@ function scrollActive(){
         }
     })
 }
+
+
 window.addEventListener('scroll', scrollActive)
 
 /*==================== CHANGE BACKGROUND HEADER ====================*/ 
@@ -151,7 +164,14 @@ function scrollHeader(){
 }
 window.addEventListener('scroll', scrollHeader)
 
+
 /*==================== SHOW SCROLL TOP ====================*/ 
+function scrollTop(){
+    const scrollTop = document.getElementById('scroll-top');
+    // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-top class
+    if(this.scrollY >= 560) scrollTop.classList.add('show-scroll'); else scrollTop.classList.remove('show-scroll')
+}
+window.addEventListener('scroll', scrollTop)
 
 
 /*==================== SHOW SCROLL UP ====================*/ 
